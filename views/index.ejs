@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+    <h1>To-Do App</h1>
+  </header>
+<main>
+  <div class="container">
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter a task..." />
+      <select id="priorityInput">
+        <option value="High">High Priority</option>
+        <option value="Low">Low Priority</option>
+      </select>
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <div class="filter-section">
+      <select id="filterSelect" onchange="renderTasks()">
+        <option value="All">All Tasks</option>
+        <option value="High">High Priority</option>
+        <option value="Low">Low Priority</option>
+      </select>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+</main>
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+    <script src="js/frontend.js"></script>
+</body>
+
+</html>
