@@ -19,6 +19,29 @@ app.post("/",function(req,res){
     
 })
 
+// PUT (Edit task)
+app.put('/tasks/:index', (req, res) => {
+  const index = parseInt(req.params.index);
+  const { text } = req.body;
+  if (tasks[index]) {
+    tasks[index].text = text;
+    return res.json(tasks);
+  } else {
+    return res.status(404).json({ error: 'Task not found' });
+  }
+});
+
+// DELETE (Remove task)
+app.delete('/tasks/:index', (req, res) => {
+  const index = parseInt(req.params.index);
+  if (tasks[index]) {
+    tasks.splice(index, 1);
+    return res.json(tasks);
+  } else {
+    return res.status(404).json({ error: 'Task not found' });
+  }
+});
+
 app.listen(5500, ()=>{
     console.log("Server Started");
 })
